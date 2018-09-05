@@ -1,0 +1,17 @@
+<h1>Recipe</h1>
+
+<p>User recipes</p>
+
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+
+<table class='table' *ngIf="forecasts">
+    <thead>
+        <tr>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forecast of forecasts">
+            <td>{{ forecast.dateFormatted }}</td>
+    </tbody>
+</table>

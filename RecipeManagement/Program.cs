@@ -9,6 +9,7 @@ using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using RecipeManagement.Models;
 
 namespace RecipeManagement
 {
@@ -51,6 +52,7 @@ namespace RecipeManagement
             };
 
             await p.client.CreateDatabaseIfNotExistsAsync(new Database { Id = "RecipeManagemendDb" });
+            await p.client.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri("RecipeManagemendDb"), new DocumentCollection { Id = "Recipe" });
         }
     }
 }
