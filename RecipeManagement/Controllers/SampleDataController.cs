@@ -18,11 +18,6 @@ namespace RecipeManagement.Controllers
         [HttpGet("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts()
         {
-            // Connect to the Azure Cosmos DB Emulator running locally
-            DocumentClient client = new DocumentClient(
-                new Uri("https://localhost:8081"),
-                "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==");
-
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
