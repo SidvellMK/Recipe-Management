@@ -4,6 +4,11 @@
 
 <p *ngIf="!forecasts"><em>Loading...</em></p>
 
+<a [routerLink]="['/recipe']">
+    <span class='glyphicon glyphicon-plus-sign'></span> Add Recipe
+</a>
+<br />
+
 <table class='table' *ngIf="forecasts">
     <thead>
         <tr>
